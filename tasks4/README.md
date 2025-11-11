@@ -1,11 +1,15 @@
-# Tasks4 - ChatGPT Summarizer
+# Tasks4 - Task Summarization using OpenAI API
 
-This command-line tool sends paragraph-length task descriptions to the
-OpenAI Chat Completions API and prints short summaries in the terminal.
+This project uses the OpenAI Chat Completions API (gpt-5-mini) to summarize
+paragraph-length task descriptions into short phrases.
 
-## How to Run
-1. Set your API key:
-   export OPENAI_API_KEY="your-key-here"
+The Python code is complete and follows all assignment requirements. However,
+I was not able to fully run and test the program because my OpenAI API
+credits ran out and I currently have a billing issue. Once the billing is
+resolved, the app will run successfully using:
 
-2. Run the program:
-   uv run tasks4
+    uv run tasks4
+
+I included two example task descriptions in the code for testing.
+
+API keys are not included in this repository for security reasons.
