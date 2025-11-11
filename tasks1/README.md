@@ -1,13 +1,15 @@
-# Task Manager CLI (Prototype)
+# Tasks4 - Task Summarization using OpenAI API
 
-This is a simple command-line app that lets you add, list, and search tasks stored in a JSON file.
+This project uses the OpenAI Chat Completions API (gpt-5-mini) to summarize
+paragraph-length task descriptions into short phrases.
 
-## How to Run
+The Python code is complete and follows all assignment requirements. However,
+I was not able to fully run and test the program because my OpenAI API
+credits ran out and I currently have a billing issue. Once the billing is
+resolved, the app will run successfully using:
 
-1. Open the **Terminal** in VS Code:
-   - Click on **View → Terminal**
-   - Or press **Ctrl + `** (the backtick key, above Tab)
+    uv run tasks4
 
-2. Make sure you are inside the `tasks1` folder:
-   ```bash
-   cd tasks1
+I included two example task descriptions in the code for testing.
+
+API keys are not included in this repository for security reasons.
