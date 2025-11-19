@@ -1,8 +1,12 @@
 import argparse
 import sys
+import logging
 from .storage import read_tasks, write_tasks, next_id
 from .models import Task
 from .config import default_tasks_path
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 def parse_args(argv=None):
@@ -41,6 +45,7 @@ def main(argv=None):
         task = Task(id=tid, title=args.title.strip(), description=args.description)
         tasks.append(task)
         write_tasks(path, tasks)
+        logger.info("added task %d: %s", task.id, task.title)
         print(f"Added task {task.id}: {task.title}")
         return 0
 
@@ -56,6 +61,7 @@ def main(argv=None):
         for t in tasks:
             if t.id == args.id:
                 print(f"{t.id}: {t.title}\n{t.description}")
+                logger.info("showed task %d", t.id)
                 return 0
         print("ERROR: task not found", file=sys.stderr)
         return 3
@@ -67,6 +73,7 @@ def main(argv=None):
             print("ERROR: task not found", file=sys.stderr)
             return 3
         write_tasks(path, new)
+        logger.info("deleted task %d", args.id)
         print(f"Deleted task {args.id}")
         return 0
 
